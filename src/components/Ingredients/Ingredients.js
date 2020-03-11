@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
-=======
-import React, { useState } from 'react';
->>>>>>> 1968303b481bcb308fed40e57585983e489d103c
 
 import IngredientForm from './IngredientForm';
 import IngredientList from './IngredientList';
@@ -31,6 +27,10 @@ const Ingredients = () => {
     console.log('[RENDERING INGREDIENTS]', userIngredients);
   }, [userIngredients]);
 
+  const filteredIngredientsHandler = filteredIngredients => {
+    setUserIngredients(filteredIngredients);
+  }
+
   const addIngredientHandler = ingredient => {
     fetch('https://react-hooks-update-13168.firebaseio.com/ingredients.json', {
       method: 'POST',
@@ -51,7 +51,7 @@ const Ingredients = () => {
       <IngredientForm onAddIngredient={addIngredientHandler}/>
 
       <section>
-        <Search />
+        <Search onLoadIngredients={filteredIngredientsHandler}/>
         <IngredientList
           ingredients={userIngredients}
           onRemoveItem={() => {}}
