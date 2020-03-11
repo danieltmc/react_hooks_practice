@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> 1968303b481bcb308fed40e57585983e489d103c
 
 import IngredientForm from './IngredientForm';
 import IngredientList from './IngredientList';
