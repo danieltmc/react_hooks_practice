@@ -78,7 +78,7 @@ const Ingredients = () => {
     //       ingredient: { id: responseData.name, ...ingredient }
     //     });
     //   });
-  }, []);
+  }, [sendRequest]);
 
   const removeIngredientHandler = useCallback(
     ingredientId => {
